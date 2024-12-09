@@ -1,45 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Memes app</title>
 
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/style.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link 
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&display=swap" 
-        rel="stylesheet">
-</head>
-<body>
-    <section class="setting-section">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="section-wrapper">
+      <section class="setting-section">
         <h2 class="setting-section__title">Настройки:</h2>
-        <div class="settings-wrapper">
-            <div class="setting-block">
-                <p class="setting-block__title">Мем</p>
-                <select class="setting-block__select" name="" id="">
-                    <option hidden disable selected value="Выберите мем"></option>
-                </select>
+        <div class="setting-wrapper">
+          <div class="setting-block">
+            <p class="setting-block__title">Мем</p>
+            <div class="select-wrapper">
+              <select class="setting-block__select" name="" id="">
+                <option hidden disable selected value="Выберите мем"></option>
+              </select>
             </div>
-            <div class="ssetting-block">
-                <p class="setting-block__title">Текст сверху</p>
-                <input class="setting-block__input" type="text">
+          </div>
+          <div class="ssetting-block">
+            <p class="setting-block__title">Текст сверху</p>
+            <div class="input-wrapper">
+              <input class="setting-block__input" type="text" />
             </div>
-            <div class="setting-block">
-                <p class="setting-block__title">Текст снизу</p>
-                <input class="setting-block__input" type="text">
+          </div>
+          <div class="setting-block">
+            <p class="setting-block__title">Текст снизу</p>
+            <div class="input-wrapper">
+              <input class="setting-block__input" type="text" />
             </div>
+          </div>
         </div>
-    </section>
-    <section class="preview-section">
+      </section>
+      <section class="preview-section">
         <h2 class="preview-section__title">Превью:</h2>
         <div class="meme-picture">
-            <p class="meme-pictere__description_top"></p>
-            <p class="meme-pictere__description_bottom"></p>
+          <p class="meme-pictere__description_top"></p>
+          <p class="meme-pictere__description_bottom"></p>
         </div>
-    </section>
-</body>
+      </section>
+    </div>
+  </body>
 </html>
