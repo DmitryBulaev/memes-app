@@ -1,0 +1,43 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.section-wrapper {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 350px;
+  justify-content: center;
+}
+
+.setting-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.setting-block__title {
+  margin-bottom: 10px;
+  font-size: 35px;
+}
+
+.setting-block__select,
+.setting-block__input {
+  line-height: 30px;
+  font-size: 25px;
+  outline: none;
+  border: none;
+}
+
+.setting-section__title,
+.preview-section__title {
+  margin-bottom: 50px;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.meme-picture {
+  border: 3px solid red;
+  width: 500px;
+  height: 250px;
+}
