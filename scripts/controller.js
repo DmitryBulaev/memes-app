@@ -6,6 +6,8 @@ class Controller {
   }
 
   init() {
-    console.log("Инициализация memes app");
+    const preview = this.model.getPreview();
+
+    this.view.render(preview);
   }
 }
