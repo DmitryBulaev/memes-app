@@ -8,4 +8,8 @@ class Model {
   constructor() {
     this.preview = PREVIEW_MOCK;
   }
+
+  getPreview() {
+    return this.preview;
+  }
 }
