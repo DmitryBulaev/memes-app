@@ -6,7 +6,16 @@ const PREVIEW_MOCK = {
 
 class Model {
   constructor() {
+    this.memes = [];
     this.preview = PREVIEW_MOCK;
+  }
+
+  setMemes(memes) {
+    this.memes = memes;
+  }
+
+  getMemes() {
+    return this.memes;
   }
 
   getPreview() {
