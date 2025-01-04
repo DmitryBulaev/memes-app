@@ -2,7 +2,7 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-.section-wrapper {
+.memes-app-wrapper {
   margin-top: 50px;
   display: flex;
   flex-direction: row;
