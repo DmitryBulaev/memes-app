@@ -14,13 +14,17 @@ class View {
     this.previewTextBottomNode.innerText = textBottom;
   }
 
-  renderMemesSelect(memes) {
+  renderMemesSelect(memes, currentMemeId) {
     memes.forEach((meme) => {
       const { id, name } = meme;
 
       const optionNode = document.createElement("option");
       optionNode.setAttribute("value", id);
       optionNode.innerText = name;
+
+      if (id === currentMemeId) {
+        optionNode.setAttribute("selected", true);
+      }
 
       this.selectNode.insertAdjacentElement("afterbegin", optionNode);
     });
