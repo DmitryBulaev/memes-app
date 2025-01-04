@@ -7,6 +7,7 @@ const PREVIEW_MOCK = {
 class Model {
   constructor() {
     this.memes = [];
+    this.currentMemeId = null;
     this.preview = PREVIEW_MOCK;
   }
 
@@ -20,5 +21,17 @@ class Model {
 
   getPreview() {
     return this.preview;
+  }
+
+  setCurrentMemeId(currentMemeId) {
+    this.currentMemeId = currentMemeId;
+  }
+
+  getCurrentMemeId() {
+    return this.currentMemeId;
+  }
+
+  getCurrentMeme() {
+    return this.memes[this.getCurrentMemeId];
   }
 }
