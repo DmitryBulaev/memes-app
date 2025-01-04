@@ -6,8 +6,16 @@ class Controller {
   }
 
   init() {
+    const memes = this.api.getMemes();
+
+    this.model.setMemes(memes);
+
+    const memesList = this.model.getMemes();
+
+    this.view.renderMemesSelect(memesList);
+
     const preview = this.model.getPreview();
 
-    this.view.render(preview);
+    this.view.renderPreview(preview);
   }
 }
