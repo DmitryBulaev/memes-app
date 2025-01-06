@@ -1,9 +1,13 @@
 class View {
-  constructor() {
+  constructor({ onMemeChange }) {
     this.selectNode = document.querySelector("#select");
     this.previewTextTopNode = document.querySelector("#text-top");
     this.previewTextBottomNode = document.querySelector("#text-bottom");
     this.previewMemeImageNode = document.querySelector("#meme-image");
+
+    this.onMemeChange = onMemeChange;
+
+    this.selectNode.addEventListener("change", this._handleSelectChange);
   }
 
   renderPreview(preview) {
@@ -14,19 +18,22 @@ class View {
     this.previewTextBottomNode.innerText = textBottom;
   }
 
-  renderMemesSelect(memes, currentMemeId) {
+  renderMemesSelect(memes) {
     memes.forEach((meme) => {
       const { id, name } = meme;
 
       const optionNode = document.createElement("option");
+
       optionNode.setAttribute("value", id);
       optionNode.innerText = name;
-
-      if (id === currentMemeId) {
-        optionNode.setAttribute("selected", true);
-      }
 
       this.selectNode.insertAdjacentElement("afterbegin", optionNode);
     });
   }
+
+  _handleSelectChange = () => {
+    const id = this.selectNode.value;
+
+    this.onMemeChange(id);
+  };
 }
