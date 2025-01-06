@@ -1,18 +1,25 @@
 const PREVIEW_MOCK = {
-  url: "https://i.imgflip.com/9au02y.jpg",
   textTop: "Когда все пытаются как-то куртиться в этой жизни",
   textBottom: "А ты просто чилловый парень",
 };
 
 class Model {
-  constructor() {
+  constructor({ onCurrentMemeIdChandge }) {
     this.memes = [];
     this.currentMemeId = null;
     this.preview = PREVIEW_MOCK;
+
+    this.onCurrentMemeIdChandge = onCurrentMemeIdChandge;
   }
 
   setMemes(memes) {
     this.memes = memes;
+  }
+
+  setCurrentMemeId(currentMemeId) {
+    this.currentMemeId = currentMemeId;
+
+    this.onCurrentMemeIdChandge();
   }
 
   getMemes() {
@@ -21,10 +28,6 @@ class Model {
 
   getPreview() {
     return this.preview;
-  }
-
-  setCurrentMemeId(currentMemeId) {
-    this.currentMemeId = currentMemeId;
   }
 
   getCurrentMemeId() {
