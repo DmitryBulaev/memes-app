@@ -4,16 +4,21 @@ const PREVIEW_MOCK = {
 };
 
 class Model {
-  constructor({ onCurrentMemeIdChandge }) {
+  constructor({ onCurrentMemeIdChandge, onMemesChange }) {
     this.memes = [];
     this.currentMemeId = null;
     this.preview = PREVIEW_MOCK;
 
+    this.onMemesChange = onMemesChange;
     this.onCurrentMemeIdChandge = onCurrentMemeIdChandge;
   }
 
   setMemes(memes) {
     this.memes = memes;
+    this.currentMemeId = memes[0].id;
+
+    this.onMemesChange();
+    this.onCurrentMemeIdChandge();
   }
 
   setCurrentMemeId(currentMemeId) {
@@ -35,6 +40,14 @@ class Model {
   }
 
   getCurrentMeme() {
-    return this.memes[this.getCurrentMemeId];
+    let currentMeme = null;
+
+    this.memes.forEach((meme) => {
+      if (meme.id === this.getCurrentMemeId()) {
+        currentMeme = meme;
+      }
+    });
+
+    return currentMeme;
   }
 }
