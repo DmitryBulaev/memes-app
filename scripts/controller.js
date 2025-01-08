@@ -3,10 +3,14 @@ class Controller {
     this.model = new Model({
       onMemesChange: this.handleModelMemesChange,
       onCurrentMemeIdChandge: this.handleModelCurrentMemeChange,
+      onTextTopChange: this.handleModelTextTopChange,
+      onTextBottomChange: this.handleModelTextBottomChange,
     });
 
     this.view = new View({
       onMemeChange: this.handleViewMemeChange,
+      onTextTopChange: this.handleViewTextTopChange,
+      onTextBottomChange: this.handleViewlTextBottomChange,
     });
 
     this.api = new Api();
@@ -29,6 +33,22 @@ class Controller {
   };
 
   handleModelCurrentMemeChange = () => {
+    this.view.renderPreview(this.model.getPreview());
+  };
+
+  handleViewTextTopChange = (text) => {
+    this.model.setTextTop(text);
+  };
+
+  handleViewlTextBottomChange = (text) => {
+    this.model.setTextBottom(text);
+  };
+
+  handleModelTextTopChange = () => {
+    this.view.renderPreview(this.model.getPreview());
+  };
+
+  handleModelTextBottomChange = () => {
     this.view.renderPreview(this.model.getPreview());
   };
 }
