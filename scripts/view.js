@@ -1,13 +1,20 @@
 class View {
-  constructor({ onMemeChange }) {
-    this.selectNode = document.querySelector("#select");
+  constructor({ onMemeChange, onTextTopChange, onTextBottomChange }) {
     this.previewTextTopNode = document.querySelector("#text-top");
     this.previewTextBottomNode = document.querySelector("#text-bottom");
     this.previewMemeImageNode = document.querySelector("#meme-image");
 
+    this.selectNode = document.querySelector("#select");
+    this.textTopInputNode = document.querySelector("#input-top");
+    this.textBottomInputNode = document.querySelector("#input-bottom");
+
     this.onMemeChange = onMemeChange;
+    this.onTextTopChange = onTextTopChange;
+    this.onTextBottomChange = onTextBottomChange;
 
     this.selectNode.addEventListener("change", this._handleSelectChange);
+    this.textTopInputNode.addEventListener("change", this._handleTextTopChange);
+    this.textBottomInputNode.addEventListener("change", this._handleTextBottomChange);
   }
 
   renderPreview(preview) {
@@ -35,5 +42,13 @@ class View {
     const id = this.selectNode.value;
 
     this.onMemeChange(id);
+  };
+
+  _handleTextTopChange = (event) => {
+    this.onTextTopChange(event.target.value);
+  };
+
+  _handleTextBottomChange = (event) => {
+    this.onTextBottomChange(event.target.value);
   };
 }
