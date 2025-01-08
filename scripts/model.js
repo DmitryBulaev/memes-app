@@ -1,8 +1,3 @@
-const PREVIEW_MOCK = {
-  textTop: "Когда все пытаются как-то куртиться в этой жизни",
-  textBottom: "А ты просто чилловый парень",
-};
-
 class Model {
   constructor({
     onCurrentMemeIdChandge,
