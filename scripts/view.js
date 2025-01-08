@@ -34,7 +34,7 @@ class View {
       optionNode.setAttribute("value", id);
       optionNode.innerText = name;
 
-      this.selectNode.insertAdjacentElement("afterbegin", optionNode);
+      this.selectNode.append(optionNode);
     });
   }
 
