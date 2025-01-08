@@ -1,6 +1,7 @@
 class Controller {
   constructor() {
     this.model = new Model({
+      onMemesChange: this.handleModelMemesChange,
       onCurrentMemeIdChandge: this.handleModelCurrentMemeChange,
     });
 
@@ -13,24 +14,26 @@ class Controller {
 
   init() {
     const memes = this.api.getMemes();
-    this.model.setMemes(memes);
 
-    this.model.setCurrentMemeId(memes[0].id);
+    this.model.setMemes(memes);
+  }
+
+  handleModelMemesChange = () => {
     const memeId = this.model.getCurrentMemeId();
     const memesList = this.model.getMemes();
     this.view.renderMemesSelect(memesList, memeId);
-  }
+  };
 
-  handleViewMemeChange(id) {
+  handleViewMemeChange = (id) => {
     this.model.setCurrentMemeId(id);
-  }
+  };
 
-  handleModelCurrentMemeChange() {
+  handleModelCurrentMemeChange = () => {
     const preview = {
       ...this.model.getPreview(),
       url: this.model.getCurrentMeme().url,
     };
 
     this.view.renderPreview(preview);
-  }
+  };
 }
