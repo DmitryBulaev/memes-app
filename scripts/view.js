@@ -13,8 +13,8 @@ class View {
     this.onTextBottomChange = onTextBottomChange;
 
     this.selectNode.addEventListener("change", this._handleSelectChange);
-    this.textTopInputNode.addEventListener("change", this._handleTextTopChange);
-    this.textBottomInputNode.addEventListener("change", this._handleTextBottomChange);
+    this.textTopInputNode.addEventListener("input", this._handleTextTopChange);
+    this.textBottomInputNode.addEventListener("input", this._handleTextBottomChange);
   }
 
   renderPreview(preview) {
