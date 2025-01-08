@@ -4,7 +4,12 @@ const PREVIEW_MOCK = {
 };
 
 class Model {
-  constructor({ onCurrentMemeIdChandge, onMemesChange }) {
+  constructor({
+    onCurrentMemeIdChandge,
+    onMemesChange,
+    onTextTopChange,
+    onTextBottomChange,
+  }) {
     this.memes = [];
     this.currentMemeId = null;
     this.textTop = "";
@@ -12,6 +17,8 @@ class Model {
 
     this.onMemesChange = onMemesChange;
     this.onCurrentMemeIdChandge = onCurrentMemeIdChandge;
+    this.onTextTopChange = onTextTopChange;
+    this.onTextBottomChange = onTextBottomChange;
   }
 
   setMemes(memes) {
@@ -26,6 +33,18 @@ class Model {
     this.currentMemeId = currentMemeId;
 
     this.onCurrentMemeIdChandge();
+  }
+
+  setTextTop(text) {
+    this.textTop = text;
+
+    this.onTextTopChange();
+  }
+
+  setTextBottom(text) {
+    this.textBottom = text;
+
+    this.onTextBottomChange();
   }
 
   getMemes() {
