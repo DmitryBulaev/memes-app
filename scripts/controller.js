@@ -29,11 +29,6 @@ class Controller {
   };
 
   handleModelCurrentMemeChange = () => {
-    const preview = {
-      ...this.model.getPreview(),
-      url: this.model.getCurrentMeme().url,
-    };
-
-    this.view.renderPreview(preview);
+    this.view.renderPreview(this.model.getPreview());
   };
 }

@@ -7,7 +7,8 @@ class Model {
   constructor({ onCurrentMemeIdChandge, onMemesChange }) {
     this.memes = [];
     this.currentMemeId = null;
-    this.preview = PREVIEW_MOCK;
+    this.textTop = "";
+    this.textBottom = "";
 
     this.onMemesChange = onMemesChange;
     this.onCurrentMemeIdChandge = onCurrentMemeIdChandge;
@@ -31,9 +32,13 @@ class Model {
     return this.memes;
   }
 
-  getPreview() {
-    return this.preview;
-  }
+  getPreview = () => {
+    return {
+      textTop: this.textTop,
+      textBottom: this.textBottom,
+      url: this.getCurrentMeme().url,
+    };
+  };
 
   getCurrentMemeId() {
     return this.currentMemeId;
