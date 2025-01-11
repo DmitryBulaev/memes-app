@@ -39,13 +39,13 @@ class Controller {
   };
 
   handleViewTextTopChange = (text) => {
-    if (text.length <= 10) {
+    if (text.length <= 100) {
       this.model.setTextTop(text);
     }
   };
 
   handleViewlTextBottomChange = (text) => {
-    if (text.length <= 10) {
+    if (text.length <= 100) {
       this.model.setTextBottom(text);
     }
   };
