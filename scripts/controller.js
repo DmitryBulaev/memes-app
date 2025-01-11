@@ -17,9 +17,9 @@ class Controller {
   }
 
   init() {
-    // задать ограничение массива в 100 элементов
     this.api.getMemes().then((data) => {
       const memes = data.data.memes;
+      memes.length = 100;
       this.model.setMemes(memes);
     });
   }
@@ -39,13 +39,15 @@ class Controller {
   };
 
   handleViewTextTopChange = (text) => {
-    // добавить проверку на кол-во символов
-    this.model.setTextTop(text);
+    if (text.length <= 10) {
+      this.model.setTextTop(text);
+    }
   };
 
   handleViewlTextBottomChange = (text) => {
-    // добавить проверку на кол-во символов
-    this.model.setTextBottom(text);
+    if (text.length <= 10) {
+      this.model.setTextBottom(text);
+    }
   };
 
   handleModelTextTopChange = () => {
