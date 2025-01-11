@@ -56,6 +56,36 @@ body {
 }
 
 .meme-picture {
-  width: 500px;
-  height: 250px;
+  position: relative;
+  width: 700px;
+}
+
+.meme-picture__image {
+  right: 100px;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.meme-pictere__text-top {
+  position: absolute;
+  top: 10%;
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(251, 92, 24);
+  text-align: center;
+  z-index: 1;
+  width: 700px;
+}
+
+.meme-pictere__text-bottom {
+  position: absolute;
+  bottom: 10%;
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(251, 92, 24);
+  text-align: center;
+  z-index: 1;
+  width: 700px;
 }
