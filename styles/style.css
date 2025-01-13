@@ -1,5 +1,5 @@
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", serif;
 }
 
 .memes-app-wrapper {
@@ -72,8 +72,9 @@ body {
   position: absolute;
   top: 10%;
   font-size: 40px;
-  font-weight: bold;
-  color: rgb(251, 92, 24);
+  font-weight: 800;
+  color: white;
+  -webkit-text-stroke: 2px black;
   text-align: center;
   z-index: 1;
   width: 700px;
@@ -83,8 +84,9 @@ body {
   position: absolute;
   bottom: 10%;
   font-size: 40px;
-  font-weight: bold;
-  color: rgb(251, 92, 24);
+  font-weight: 800;
+  color: white;
+  -webkit-text-stroke: 2px black;
   text-align: center;
   z-index: 1;
   width: 700px;
